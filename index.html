@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA CLUB 2026 | أورا جيم - نادي واشتراكات اللياقة البدنية الأحدث في مصر</title>
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-light: #10b981;
+      --primary-bg: #ecfdf5;
+      --accent: #0284c7;
+      --accent-bg: #eff6ff;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --slate-500: #64748b;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12);
+      --glow: rgba(5, 150, 105, 0.18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, 'Cairo', 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: #fbfcfd; color: var(--dark); line-height: 1.6; padding-bottom: 75px; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    .container { max-width: 1260px; margin: 0 auto; padding: 0 18px; }
+
+    /* Top Announcement Bar */
+    .top-bar { background: linear-gradient(90deg, #0f172a, #1e293b); color: #fff; font-size: 0.82rem; padding: 9px 0; }
+    .top-bar-inner { display: flex; justify-content: space-between; align-items: center; }
+    .top-pill { background: var(--primary-light); color: #0f172a; font-weight: 800; font-size: 0.72rem; padding: 2px 8px; border-radius: 99px; margin-left: 6px; }
+
+    /* Header */
+    header { background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--slate-200); }
+    .header-content { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.45rem; font-weight: 900; letter-spacing: -0.5px; }
+    .brand-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 12px var(--glow); }
+    .brand span { color: var(--primary); }
+
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-trial { background: var(--primary-bg); color: var(--primary); border: 1px solid rgba(5,150,105,0.25); padding: 9px 18px; border-radius: 99px; font-weight: 800; font-size: 0.88rem; transition: 0.2s; }
+    .btn-trial:hover { background: var(--primary); color: #fff; }
+    .btn-join { background: var(--dark); color: #fff; padding: 9px 20px; border-radius: 99px; font-weight: 800; font-size: 0.88rem; transition: 0.2s; box-shadow: 0 4px 12px rgba(15,23,42,0.15); }
+    .btn-join:hover { background: #1e293b; transform: translateY(-1px); }
+
+    /* Marketing Mega Menu */
+    .mega-nav { border-top: 1px solid var(--slate-100); background: #ffffff; }
+    .nav-list { display: flex; list-style: none; gap: 4px; overflow-x: auto; padding: 6px 0; scrollbar-width: none; }
+    .nav-list::-webkit-scrollbar { display: none; }
+    .nav-item { position: relative; }
+    .nav-btn { display: flex; align-items: center; gap: 6px; padding: 9px 14px; font-size: 0.88rem; font-weight: 700; color: #334155; border-radius: 8px; white-space: nowrap; transition: 0.2s; }
+    .nav-btn:hover, .nav-btn.active { color: var(--primary); background: var(--primary-bg); }
+    .tag-sm { font-size: 0.65rem; font-weight: 800; padding: 1px 6px; border-radius: 4px; }
+    .tag-hot { background: #fee2e2; color: #dc2626; }
+    .tag-new { background: #dbeafe; color: #1d4ed8; }
+
+    /* Mega Dropdown */
+    .mega-dropdown { position: absolute; top: 100%; right: 0; width: 740px; background: #fff; border: 1px solid var(--slate-200); border-radius: 16px; padding: 22px; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: repeat(3, 1fr) 200px; gap: 16px; opacity: 0; visibility: hidden; transform: translateY(8px); transition: 0.2s; z-index: 999; }
+    .nav-item:hover .mega-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .drop-col h5 { font-size: 0.88rem; font-weight: 800; color: var(--dark); padding-bottom: 6px; border-bottom: 2px solid var(--primary-bg); margin-bottom: 10px; }
+    .drop-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .drop-col a { font-size: 0.82rem; color: var(--slate-500); display: block; padding: 3px 6px; border-radius: 6px; transition: 0.15s; }
+    .drop-col a:hover { color: var(--primary); background: var(--slate-50); padding-right: 8px; }
+    .promo-card { background: linear-gradient(145deg, var(--slate-50), #fff); border: 1px dashed var(--primary); border-radius: 12px; padding: 14px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+
+    /* Hero Section */
+    .hero { background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.06) 0%, transparent 40%), #fff; border-bottom: 1px solid var(--slate-200); padding: 50px 0 60px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+    .hero-badge { background: var(--primary-bg); color: var(--primary); font-size: 0.82rem; font-weight: 800; padding: 6px 14px; border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 16px; border: 1px solid rgba(5,150,105,0.2); }
+    .hero h1 { font-size: 3.1rem; line-height: 1.18; font-weight: 900; margin-bottom: 18px; letter-spacing: -0.5px; }
+    .hero h1 span { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--slate-500); font-size: 1.1rem; max-width: 530px; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
+    .btn-primary { background: var(--primary); color: #fff; padding: 14px 28px; border-radius: 99px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 18px rgba(5, 150, 105, 0.25); transition: 0.2s; }
+    .btn-primary:hover { background: #047857; transform: translateY(-2px); }
+    .btn-outline { background: #fff; color: var(--dark); border: 1px solid var(--slate-200); padding: 14px 26px; border-radius: 99px; font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+    .btn-outline:hover { background: var(--slate-50); border-color: var(--slate-400); }
+
+    .hero-metrics { display: flex; gap: 28px; border-top: 1px solid var(--slate-200); padding-top: 22px; }
+    .metric b { font-size: 1.35rem; font-weight: 900; display: block; color: var(--dark); }
+    .metric span { font-size: 0.78rem; color: var(--slate-500); }
+
+    /* Hero Visual Card */
+    .hero-club-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 24px; padding: 30px; box-shadow: var(--shadow-lg); position: relative; }
+    .club-preview-img { width: 100%; height: 210px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; position: relative; overflow: hidden; margin-bottom: 18px; }
+    .club-preview-img::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(16,185,129,0.25), transparent 70%); }
+    .pass-chip { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); padding: 5px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; margin-bottom: 8px; z-index: 2; }
+    .pass-title { font-size: 1.5rem; font-weight: 900; z-index: 2; letter-spacing: 1px; }
+
+    /* Billing Toggle Switch */
+    .pricing-header { text-align: center; margin: 60px 0 35px; }
+    .pricing-header h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; }
+    .pricing-header p { font-size: 1rem; color: var(--slate-500); max-width: 600px; margin: 0 auto 24px; }
+    .billing-switch-wrap { display: inline-flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px 10px; border-radius: 99px; box-shadow: var(--shadow-sm); }
+    .billing-opt { padding: 8px 18px; border-radius: 99px; font-size: 0.88rem; font-weight: 800; cursor: pointer; transition: 0.2s; color: var(--slate-500); }
+    .billing-opt.active { background: var(--dark); color: #fff; }
+    .save-tag { background: #fee2e2; color: #dc2626; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 99px; }
+
+    /* Membership Plans Grid */
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 24px; margin-bottom: 70px; }
+    .plan-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 24px; padding: 30px; position: relative; display: flex; flex-direction: column; transition: 0.25s; box-shadow: var(--shadow-sm); }
+    .plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(5,150,105,0.3); }
+    .plan-card.featured { border: 2px solid var(--primary); box-shadow: 0 15px 35px rgba(5,150,105,0.12); }
+    .featured-ribbon { position: absolute; top: -14px; right: 24px; background: var(--primary); color: #fff; font-size: 0.76rem; font-weight: 800; padding: 4px 14px; border-radius: 99px; }
+
+    .plan-header { margin-bottom: 20px; }
+    .plan-header h3 { font-size: 1.35rem; font-weight: 900; }
+    .plan-header p { font-size: 0.84rem; color: var(--slate-500); margin-top: 4px; }
+    .plan-price-wrap { display: flex; align-items: baseline; gap: 4px; margin: 18px 0 20px; }
+    .plan-price { font-size: 2.3rem; font-weight: 900; color: var(--dark); }
+    .plan-card.featured .plan-price { color: var(--primary); }
+    .plan-period { font-size: 0.88rem; color: var(--slate-500); font-weight: 700; }
+
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; border-top: 1px dashed var(--slate-200); padding-top: 20px; font-size: 0.9rem; }
+    .plan-features li { display: flex; align-items: center; gap: 10px; color: var(--dark); }
+    .check-icon { width: 20px; height: 20px; border-radius: 50%; background: var(--primary-bg); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; font-weight: 900; }
+
+    /* Ladies Section */
+    .ladies-section { background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%); border: 1px solid #fecdd3; border-radius: var(--radius-xl); padding: 44px; margin-bottom: 70px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center; }
+    .ladies-badge { background: #e11d48; color: #fff; font-size: 0.76rem; font-weight: 800; padding: 4px 12px; border-radius: 99px; display: inline-block; margin-bottom: 12px; }
+    .ladies-section h2 { font-size: 2rem; font-weight: 900; color: #881337; margin-bottom: 10px; }
+    .ladies-section p { color: #4c0519; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+
+    /* Class Schedule Interactive Section */
+    .schedule-section { margin-bottom: 70px; }
+    .day-tabs { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 24px; padding-bottom: 4px; }
+    .day-tab { padding: 9px 18px; border-radius: 99px; background: #fff; border: 1px solid var(--slate-200); font-weight: 800; font-size: 0.88rem; color: var(--slate-500); cursor: pointer; transition: 0.2s; white-space: nowrap; }
+    .day-tab.active, .day-tab:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+    .classes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .class-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 18px; padding: 20px; transition: 0.2s; }
+    .class-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .class-time { font-size: 0.8rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; }
+    .class-name { font-size: 1.15rem; font-weight: 800; margin: 6px 0; }
+    .class-coach { font-size: 0.84rem; color: var(--slate-500); }
+
+    /* Interactive BMI & Nutrition Tool */
+    .calc-container { background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%); border: 1px solid var(--slate-200); border-radius: 28px; padding: 40px; margin-bottom: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .calc-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+    .input-group { display: flex; flex-direction: column; gap: 6px; }
+    .input-group label { font-size: 0.84rem; font-weight: 700; }
+    .input-group input, .input-group select { padding: 11px 14px; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; font-size: 0.9rem; outline: none; }
+    .calc-result-box { background: #fff; border: 1px solid var(--slate-200); border-radius: 22px; padding: 30px; text-align: center; box-shadow: var(--shadow-md); }
+    .calc-result-box .num { font-size: 2.8rem; font-weight: 900; color: var(--primary); margin: 6px 0; }
+
+    /* Facilities Grid */
+    .facilities-section { margin-bottom: 70px; }
+    .facilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+    .facility-box { background: #fff; border: 1px solid var(--slate-200); border-radius: 20px; padding: 24px; text-align: center; transition: 0.2s; }
+    .facility-box:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .facility-icon { width: 60px; height: 60px; border-radius: 16px; background: var(--primary-bg); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 16px; }
+    .facility-box h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+    .facility-box p { font-size: 0.84rem; color: var(--slate-500); }
+
+    /* Certified Coaches */
+    .coaches-section { margin-bottom: 70px; }
+    .coaches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; }
+    .coach-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 20px; padding: 22px; text-align: center; box-shadow: var(--shadow-sm); }
+    .coach-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--slate-100), var(--slate-200)); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 14px; border: 3px solid var(--primary-bg); }
+    .coach-card h4 { font-size: 1.05rem; font-weight: 800; }
+    .coach-card span { font-size: 0.8rem; color: var(--primary); font-weight: 700; display: block; margin: 3px 0 10px; }
+    .coach-card p { font-size: 0.82rem; color: var(--slate-500); }
+
+    /* Branches in Egypt */
+    .branches-section { margin-bottom: 70px; }
+    .branches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .branch-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 18px; padding: 20px; transition: 0.2s; }
+    .branch-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .branch-card h4 { font-size: 0.98rem; font-weight: 800; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .branch-card p { font-size: 0.82rem; color: var(--slate-500); line-height: 1.5; }
+
+    /* Footer */
+    footer { background: #fff; border-top: 1px solid var(--slate-200); padding: 50px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 36px; margin-bottom: 34px; }
+    .footer-col h4 { font-size: 0.98rem; font-weight: 800; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { font-size: 0.85rem; color: var(--slate-500); transition: 0.15s; }
+    .footer-col a:hover { color: var(--primary); }
+
+    /* Modals */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.65); backdrop-filter: blur(5px); z-index: 2200; display: flex; align-items: center; justify-content: center; padding: 18px; opacity: 0; visibility: hidden; transition: 0.2s; }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-window { background: #fff; border-radius: 24px; width: 100%; max-width: 540px; padding: 32px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); }
+    .close-modal { position: absolute; top: 16px; left: 16px; width: 34px; height: 34px; border-radius: 50%; background: var(--slate-100); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+
+    /* Toast */
+    .toast-tray { position: fixed; bottom: 22px; left: 22px; z-index: 3000; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+    .toast-pill { background: #fff; border: 1px solid var(--slate-200); border-right: 4px solid var(--primary); padding: 10px 18px; border-radius: 12px; font-size: 0.85rem; font-weight: 700; box-shadow: var(--shadow-lg); }
+
+    /* Mobile Bottom Navigation */
+    .mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-top: 1px solid var(--slate-200); z-index: 990; padding: 8px 14px; justify-content: space-around; align-items: center; }
+    .mobile-tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 0.72rem; font-weight: 700; color: var(--slate-500); }
+    .mobile-tab.active { color: var(--primary); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .ladies-section, .calc-container { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mega-dropdown { width: 95vw; left: -10px; right: -10px; grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .mobile-bar { display: flex; }
+      .hero h1 { font-size: 2.3rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>
+        <span class="top-pill">عرض 2026 الحصري</span>
+        <span>وفر 25% على اشتراكات الجيم السنوية + شهر مجاناً وشيكر هدية 🇪🇬 | كود: <strong>FIT2026</strong></span>
+      </div>
+      <div style="font-size: 0.78rem; color: #94a3b8;">احجز يومك التجريبي مجاناً • 5 فروع في مصر</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 5v14M18 5v14M2 9h4M18 9h4M2 15h4M18 15h4M6 12h12"/></svg>
+          </div>
+          <div>AURA <span>CLUB 2026</span></div>
+        </a>
+
+        <!-- Header Actions -->
+        <div class="nav-actions">
+          <button class="btn-trial" onclick="openTrialModal()">
+            🔥 احجز تمرينتك المجانية
+          </button>
+          <a href="#plans" class="btn-join">
+            اشترك الآن أونلاين
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Mega-Menu Navigation Bar -->
+    <nav class="mega-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#plans" class="nav-btn active">📋 باقات وعروض الاشتراكات</a>
+          </li>
+
+          <!-- Facilities Dropdown -->
+          <li class="nav-item">
+            <a href="#facilities" class="nav-btn">
+              🏋️ المرافق والأجهزة الذكية
+              <span class="tag-sm tag-new">تجهيز 2026</span>
+            </a>
+            <div class="mega-dropdown">
+              <div class="drop-col">
+                <h5>🏋️ صالات التمرين</h5>
+                <ul>
+                  <li><a href="#facilities">صالة الأوزان الحرة والحديد</a></li>
+                  <li><a href="#facilities">منطقة أجهزة الكارديو الذكية</a></li>
+                  <li><a href="#facilities">حلبة الملاكمة والكروسفت</a></li>
+                </ul>
+              </div>
+              <div class="drop-col">
+                <h5>🧖 السبا والاستشفاء</h5>
+                <ul>
+                  <li><a href="#facilities">المسبح الأولمبي الدافئ</a></li>
+                  <li><a href="#facilities">الساونا والجاكوزي والبخار</a></li>
+                  <li><a href="#facilities">جلسات التبريد بالثلج Cryotherapy</a></li>
+                </ul>
+              </div>
+              <div class="drop-col">
+                <h5>🥤 خدمات إضافية</h5>
+                <ul>
+                  <li><a href="#facilities">كافيه وبار البروتين الصحي</a></li>
+                  <li><a href="#facilities">أجهزة قياس InBody 770 الطبية</a></li>
+                  <li><a href="#facilities">لوكرز وغرف تبديل VIP</a></li>
+                </ul>
+              </div>
+              <div class="promo-card">
+                <b style="font-size: 0.85rem; color: var(--primary);">يوم تجريبي مجاني 100%</b>
+                <p style="font-size: 0.74rem; color: var(--slate-500); margin: 6px 0;">جرب الجيم والمسبح والساونا ليوم كامل مجاناً قبل الاشتراك</p>
+                <button class="btn-primary" style="padding: 6px 12px; font-size: 0.78rem; justify-content: center;" onclick="openTrialModal()">احجز تذكرتك</button>
+              </div>
+            </div>
+          </li>
+
+          <!-- Classes -->
+          <li class="nav-item">
+            <a href="#classes" class="nav-btn">
+              🥊 كلاسات اللياقة الجماعية
+              <span class="tag-sm tag-hot">+100 كلاس أسبوعياً</span>
+            </a>
+          </li>
+
+          <!-- Ladies Only -->
+          <li class="nav-item">
+            <a href="#ladies" class="nav-btn" style="color: #e11d48;">
+              👩 قسم السيدات المنفصل 100%
+            </a>
+          </li>
+
+          <!-- Personal Training -->
+          <li class="nav-item">
+            <a href="#coaches" class="nav-btn">🥇 كباتن التدريب الخاص PT</a>
+          </li>
+
+          <!-- BMI Calculator -->
+          <li class="nav-item">
+            <a href="#calculator" class="nav-btn">🧮 حاسبة اللياقة والكتلة</a>
+          </li>
+
+          <!-- Branches -->
+          <li class="nav-item" style="margin-right: auto;">
+            <a href="#branches" class="nav-btn">📍 فروعنا في مصر</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span>🏆 الجيم الأكثر تطوراً وفخامة في مصر لعام 2026</span>
+        </div>
+        <h1>ابدأ رحلة تحولك مع <span>أحدث تجربة لياقة بدنية</span></h1>
+        <p>مساحة تتجاوز 3,000 متر مربع مجهزة بأحدث أجهزة Technogym و Hammer Strength الذكية، مسبح أولمبي دافئ، غرف سبا واستشفاء ثلجي، وأفضل كباتن اللياقة البدنية في مصر.</p>
+        
+        <div class="hero-actions">
+          <a href="#plans" class="btn-primary">
+            <span>استكشف باقات الاشتراك</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </a>
+          <button class="btn-outline" onclick="openTrialModal()">
+            <span>احجز حصتك التجريبية مجاناً</span>
+          </button>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric"><b>+15,000</b><span>عضو نشط في فروعنا</span></div>
+          <div class="metric"><b>5 فروع</b><span>القاهرة، الجيزة، الإسكندرية</span></div>
+          <div class="metric"><b>مفتوح 24/7</b><span>تدرب في أي وقت يناسبك</span></div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-club-card">
+        <div class="club-preview-img">
+          <span class="pass-chip">AURA VIP PASS 2026</span>
+          <div class="pass-title">AURA FITNESS CLUB</div>
+          <span style="font-size: 0.8rem; color: #94a3b8; z-index: 2;">ALL ACCESS • 24/7 ACCESS</span>
+        </div>
+
+        <div style="text-align: center;">
+          <span style="background: var(--primary-bg); color: var(--primary); font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 99px;">العرض السنوي الأكثر توفيراً</span>
+          <h3 style="font-size: 1.25rem; font-weight: 900; margin: 8px 0 4px;">عضوية النخبة والسبا السنوية (VIP)</h3>
+          <p style="font-size: 0.85rem; color: var(--slate-500); margin-bottom: 16px;">مسبح أولمبي • سبا واستشفاء ثلجي • كلاسات غير محدودة</p>
+          <div style="display: flex; justify-content: center; align-items: center; gap: 14px;">
+            <b style="font-size: 1.5rem; color: var(--primary);">1,490 ج.م <small style="font-size:0.85rem; color:var(--slate-500);">/ شهر</small></b>
+            <button class="btn-primary" style="padding: 9px 22px; font-size: 0.88rem;" onclick="openSubscribeModal('عضوية النخبة والسبا السنوية VIP', 1490)">اشترك الآن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <main class="container" id="plans">
+    <div class="pricing-header">
+      <span style="color: var(--primary); font-weight: 800; font-size: 0.88rem;">باقات الاشتراكات المرنة 2026</span>
+      <h2>اختر خطة الاشتراك المناسبة لهدفك</h2>
+      <p>باقات مرنة تناسب جميع المستويات مع إمكانية تجميد الاشتراك والتقسيط الميسر بدون فوائد</p>
+
+      <!-- Monthly / Annual Toggle -->
+      <div class="billing-switch-wrap">
+        <div class="billing-opt active" id="optMonthly" onclick="toggleBilling('monthly')">اشتراك شهري</div>
+        <div class="billing-opt" id="optAnnual" onclick="toggleBilling('annual')">
+          اشتراك سنوي
+          <span class="save-tag">وفّر 25% 🔥</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="plans-grid">
+      <!-- Plan 1: Basic -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>الباقة الفضية (Silver Basic)</h3>
+          <p>مثالية للمبتدئين ومحبي تمارين اللياقة الأساسية</p>
+        </div>
+        <div class="plan-price-wrap">
+          <span class="plan-price" id="priceBasic">850</span>
+          <span class="plan-period" id="periodBasic">ج.م / شهرياً</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon">✓</span> دخول غير محدود لصالة الأوزان والكارديو</li>
+          <li><span class="check-icon">✓</span> خزانة مجانية وموقف سيارات خاص</li>
+          <li><span class="check-icon">✓</span> فحص InBody بدني مجاني شهرياً</li>
+          <li><span class="check-icon">✓</span> دخول في أوقات الذروة وخارجها</li>
+          <li><span class="check-icon">✓</span> تطبيق الجيم الذكي لمتابعة التمارين</li>
+        </ul>
+        <button class="btn-outline" style="width: 100%; justify-content: center; margin-top: auto;" onclick="openSubscribeModal('الباقة الفضية Silver Basic', 850)">
+          اختيار الباقة الفضية
+        </button>
+      </div>
+
+      <!-- Plan 2: Pro Fitness (Featured) -->
+      <div class="plan-card featured">
+        <span class="featured-ribbon">🔥 الأكثر طلباً وشعبية</span>
+        <div class="plan-header">
+          <h3>باقة اللياقة الشاملة (Gold Pro)</h3>
+          <p>الحل المتكامل لبناء العضلات مع كلاسات الجروب والسبا</p>
+        </div>
+        <div class="plan-price-wrap">
+          <span class="plan-price" id="pricePro">1,350</span>
+          <span class="plan-period" id="periodPro">ج.م / شهرياً</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon">✓</span> كل مزايا الباقة الفضية + دخول 24/7</li>
+          <li><span class="check-icon">✓</span> حضور غير محدود لكلاسات الجروب (كروسفت، سبينينج، بوكسينج)</li>
+          <li><span class="check-icon">✓</span> جلسة تدريب شخصي 1-on-1 مجانية شهرياً</li>
+          <li><span class="check-icon">✓</span> دخول غرف الساونا والجاكوزي والبخار</li>
+          <li><span class="check-icon">✓</span> إمكانية تجميد الاشتراك حتى 30 يوماً (Freeze)</li>
+          <li><span class="check-icon">✓</span> فحص InBody أسبوعي مع جدول غذائي</li>
+        </ul>
+        <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: auto;" onclick="openSubscribeModal('باقة اللياقة الشاملة Gold Pro', 1350)">
+          اشترك في Gold Pro الآن
+        </button>
+      </div>
+
+      <!-- Plan 3: VIP Elite -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>باقة النخبة الفاخرة (Platinum VIP)</h3>
+          <p>تجربة الرفاهية الكاملة مع المسبح الأولمبي والاستشفاء بالثلج</p>
+        </div>
+        <div class="plan-price-wrap">
+          <span class="plan-price" id="priceVip">2,100</span>
+          <span class="plan-period" id="periodVip">ج.م / شهرياً</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon">✓</span> جميع مميزات باقة Gold Pro كاملة</li>
+          <li><span class="check-icon">✓</span> دخول المسبح الأولمبي الدافئ</li>
+          <li><span class="check-icon">✓</span> جلسات استشفاء عضلي بالتبريد (Cryotherapy)</li>
+          <li><span class="check-icon">✓</span> خزانة خاصة VIP باسمك طوال فترة الاشتراك</li>
+          <li><span class="check-icon">✓</span> 4 دعوات استضافة أصدقاء شهرياً مجاناً</li>
+          <li><span class="check-icon">✓</span> خصم 20% على بار البروتين والمكملات الغذائية</li>
+          <li><span class="check-icon">✓</span> تجميد الاشتراك حتى 60 يوماً مجاناً</li>
+        </ul>
+        <button class="btn-outline" style="width: 100%; justify-content: center; margin-top: auto;" onclick="openSubscribeModal('باقة النخبة الفاخرة Platinum VIP', 2100)">
+          اختيار باقة VIP
+        </button>
+      </div>
+
+      <!-- Plan 4: Private Training 1-on-1 -->
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>باقة التدريب الخاص المكثف (PT Private)</h3>
+          <p>مدرب شخصي بطل دولي يرافقك خطوة بخطوة للوصول للهدف</p>
+        </div>
+        <div class="plan-price-wrap">
+          <span class="plan-price" id="pricePt">3,400</span>
+          <span class="plan-period" id="periodPt">ج.م / شهرياً (12 حصة)</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check-icon">✓</span> 12 حصة تدريب شخصي خاصة 1-on-1 شهرياً</li>
+          <li><span class="check-icon">✓</span> تصميم برنامج غذائي وتدريبي مصمم لبيانات جسمك</li>
+          <li><span class="check-icon">✓</span> متابعة يومية عبر الواتساب مع المدرب</li>
+          <li><span class="check-icon">✓</span> دخول شامل كافة مرافق النادي والسبا مجاناً</li>
+          <li><span class="check-icon">✓</span> ضمان تحقيق نتائج ملحوظة خلال أول 60 يوماً</li>
+        </ul>
+        <button class="btn-outline" style="width: 100%; justify-content: center; margin-top: auto;" onclick="openSubscribeModal('باقة التدريب الخاص المكثف PT Private', 3400)">
+          حجز تدريب شخصي PT
+        </button>
+      </div>
+    </div>
+
+    <!-- Ladies Exclusive Gym Section -->
+    <section class="ladies-section" id="ladies">
+      <div>
+        <span class="ladies-badge">🌸 خصوصية وراحة مطلقة</span>
+        <h2>فرع وقسم السيدات المنفصل 100%</h2>
+        <p>
+          نادي صحي ورياضي متكامل مخصص للسيدات فقط بأعلى معايير الخصوصية. يضم صالة أوزان وكارديو حديثة، كلاسات زومبا وبيلاتس ويوجا، مسبح وسبا مغلق، ونخبة من أفضل المدربات المعتمدات دولياً لمساعدتك على نحت قوامك وخسارة الوزن.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn-primary" style="background: #e11d48;" onclick="openTrialModal('ladies')">احجزي حصة تجريبية نسائية مجانية</button>
+          <button class="btn-outline" style="color: #881337; border-color: #fecdd3;" onclick="openSubscribeModal('اشتراك السيدات الخاص Ladies Club', 1250)">الاشتراك في قسم السيدات</button>
+        </div>
+      </div>
+
+      <div style="background:#fff; border-radius:20px; padding:24px; box-shadow:var(--shadow-md); border:1px solid #fecdd3;">
+        <h4 style="color:#881337; font-weight:800; margin-bottom:12px;">مميزات القسم النسائي:</h4>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:#4c0519;">
+          <li>✓ خصوصية تامة وفريق عمل ومدربات سيدات 100%</li>
+          <li>✓ كلاسات يومية (Zumba, Pilates, Yoga, Step Aerobics)</li>
+          <li>✓ جاكوزي وساونا وبخار للاسترخاء التام</li>
+          <li>✓ ركن خاص للأطفال وحضانة مؤمنة أثناء تمرينك</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Group Classes Schedule -->
+    <section class="schedule-section" id="classes">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <span style="color:var(--primary); font-weight:800; font-size:0.84rem;">جدول التمارين اليومي</span>
+          <h2 style="font-size:1.8rem; font-weight:900;">كلاسات اللياقة البدنية الجماعية</h2>
+        </div>
+        <button class="btn-primary" style="padding:8px 18px; font-size:0.85rem;" onclick="openTrialModal()">احجز مكانك في الكلاس</button>
+      </div>
+
+      <div class="day-tabs">
+        <div class="day-tab active" onclick="switchDay('sat', this)">السبت</div>
+        <div class="day-tab" onclick="switchDay('sun', this)">الأحد</div>
+        <div class="day-tab" onclick="switchDay('mon', this)">الإثنين</div>
+        <div class="day-tab" onclick="switchDay('tue', this)">الثلاثاء</div>
+        <div class="day-tab" onclick="switchDay('wed', this)">الأربعاء</div>
+        <div class="day-tab" onclick="switchDay('thu', this)">الخميس</div>
+        <div class="day-tab" onclick="switchDay('fri', this)">الجمعة</div>
+      </div>
+
+      <div class="classes-grid" id="classesGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Interactive BMI & Nutrition Calculator -->
+    <section class="calc-container" id="calculator">
+      <div>
+        <span class="hero-badge">أداة القياس الذكية 2026</span>
+        <h2 style="font-size:1.75rem; font-weight:900; margin:8px 0 10px;">احسب مؤشر كتلة جسمك (BMI) والهدف</h2>
+        <p style="color:var(--slate-500); font-size:0.92rem;">أدخل طولك ووزنك وهدفك وسيقوم النظام بتحديد حالة جسمك والاشتراك الأنسب للوصول لهدفك بأسرع وقت.</p>
+
+        <div class="calc-inputs">
+          <div class="input-group">
+            <label>الطول (سم)</label>
+            <input type="number" id="userHeight" value="175" min="120" max="220" oninput="runBmiCalc()">
+          </div>
+          <div class="input-group">
+            <label>الوزن الحالي (كجم)</label>
+            <input type="number" id="userWeight" value="80" min="40" max="200" oninput="runBmiCalc()">
+          </div>
+          <div class="input-group" style="grid-column: span 2;">
+            <label>الهدف الرياضي الأساسي</label>
+            <select id="userGoal" onchange="runBmiCalc()">
+              <option value="lose">خسارة دهون ونحت الجسم (Fat Loss)</option>
+              <option value="gain">بناء عضلات وضخامة (Muscle Building)</option>
+              <option value="fit">لياقة عامة وصحة بدنية (General Fitness)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result-box">
+        <span style="font-size:0.88rem; color:var(--slate-500); font-weight:700;">مؤشر كتلة جسمك (BMI)</span>
+        <div class="num" id="bmiNum">26.1</div>
+        <div style="font-weight:800; font-size:1.05rem; margin-bottom:6px;" id="bmiStatus">وزن زائد خفيف</div>
+        <p style="font-size:0.84rem; color:var(--slate-500); margin-bottom:18px;" id="bmiAdvice">نوصي بالانضمام إلى باقة Gold Pro مع كلاسات الكروسفت والكارديو لخسارة 4 إلى 6 كجم شهرياً بأمان.</p>
+        <button class="btn-primary" style="width:100%; justify-content:center;" onclick="openSubscribeModal('باقة اللياقة المقترحة لك', 1350)">
+          اشترك في الخطة المقترحة لك
+        </button>
+      </div>
+    </section>
+
+    <!-- Gym Facilities Showcase -->
+    <section class="facilities-section" id="facilities">
+      <div style="text-align:center; max-width:600px; margin:0 auto 30px;">
+        <span style="color:var(--primary); font-weight:800; font-size:0.85rem;">مستوى عالمي للتدريب</span>
+        <h2 style="font-size:1.85rem; font-weight:900;">مرافق وخدمات النادي المتطورة</h2>
+        <p style="color:var(--slate-500); font-size:0.92rem;">كل ما تحتاجه لتجربة رياضية متكاملة تحت سقف واحد</p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-box">
+          <div class="facility-icon">🏋️</div>
+          <h4>صالة أوزان حرة ذكية</h4>
+          <p>أحدث أجهزة Technogym الإيطالية 2026 وأوزان حرة حتى 60 كجم مع مساحات واسعة للتمارين المركبة.</p>
+        </div>
+        <div class="facility-box">
+          <div class="facility-icon">🏊</div>
+          <h4>مسبح أولمبي دافئ</h4>
+          <p>مسبح مغطى بنظام تدفئة وتعقيم بالأوزون، متاح للسباحة الحرة وكلاسات الأكوا إيروبكس.</p>
+        </div>
+        <div class="facility-box">
+          <div class="facility-icon">🧊</div>
+          <h4>استشفاء ثلجي Cryotherapy</h4>
+          <p>أحدث غرف التبريد العضلي بالثلج والساونا الفنلندية لتسريع التعافي ومنع الإصابات والإجهاد.</p>
+        </div>
+        <div class="facility-box">
+          <div class="facility-icon">🥤</div>
+          <h4>بار بروتين وعصائر فريش</h4>
+          <p>أشهى سموذي البروتين والمشروبات المنعشة والمكملات الغذائية بعد التمرين مباشرة بدون سكر مضاف.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certified Coaches -->
+    <section class="coaches-section" id="coaches">
+      <div style="text-align:center; max-width:600px; margin:0 auto 30px;">
+        <span style="color:var(--primary); font-weight:800; font-size:0.85rem;">فريق التدريب الاحترافي</span>
+        <h2 style="font-size:1.85rem; font-weight:900;">نخبة من أفضل الكباتن المعتمدين</h2>
+      </div>
+
+      <div class="coaches-grid">
+        <div class="coach-card">
+          <div class="coach-avatar">💪</div>
+          <h4>كابتن أحمد الشناوي</h4>
+          <span>بطل جمهورية ومدرب كمال أجسام معتمد ISSA</span>
+          <p>خبرة 12 عاماً في تحويل الأجسام والتحضير للبطولات وبناء الكتل العضلية الضخمة.</p>
+        </div>
+        <div class="coach-card">
+          <div class="coach-avatar">🥊</div>
+          <h4>كابتن مصطفى بدر</h4>
+          <span>مدرب بوكسينج وفنون قتالية وCrossFit L2</span>
+          <p>متخصص في حرق الدهون ورفع معدلات التحمل العضلي والرشاقة عبر تدريبات الفتنس العنيفة.</p>
+        </div>
+        <div class="coach-card">
+          <div class="coach-avatar">🧘</div>
+          <h4>كابتن نوران حسام</h4>
+          <span>مدربة بيلاتس ويوجا ونحت قوام معتمدة ACE</span>
+          <p>متخصصة في مرونة المفاصل، علاج آلام أسفل الظهر، واستعادة الرشاقة بعد الولادة.</p>
+        </div>
+        <div class="coach-card">
+          <div class="coach-avatar">🥗</div>
+          <h4>د. تامر فاروق</h4>
+          <span>استشاري تغذية علاجية ورياضية معتمد</span>
+          <p>تصميم جداول غذائية محسوبة السعرات والماكروز وفق فحص الدم ونمط حياة المشترك.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Club Branches in Egypt -->
+    <section class="branches-section" id="branches">
+      <div style="margin-bottom:24px;">
+        <span style="color:var(--primary); font-weight:800; font-size:0.84rem;">أقرب فرع إليك</span>
+        <h2 style="font-size:1.8rem; font-weight:900;">فروعنا المنتشرة في مصر</h2>
+      </div>
+
+      <div class="branches-grid">
+        <div class="branch-card">
+          <h4>📍 فرع التجمع الخامس</h4>
+          <p>شارع التسعين الشمالي، بجوار مجمع البنوك، القاهرة الجديدة.<br>📞 01023456789</p>
+        </div>
+        <div class="branch-card">
+          <h4>📍 فرع الشيخ زايد</h4>
+          <p>وصلة دهشور، أمام مول أركان، مدينة الشيخ زايد، الجيزة.<br>📞 01123456789</p>
+        </div>
+        <div class="branch-card">
+          <h4>📍 فرع المعادي</h4>
+          <p>شارع النصر، دجلة المعادي، بجوار كارفور، القاهرة.<br>📞 01223456789</p>
+        </div>
+        <div class="branch-card">
+          <h4>📍 فرع الإسكندرية</h4>
+          <p>شارع ألبرت الأول، سموحة، أمام نادي سموحة، الإسكندرية.<br>📞 01523456789</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 12px;">
+            <div class="brand-icon" style="width:34px; height:34px;">⚡</div>
+            <div>AURA <span>CLUB 2026</span></div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--slate-500); line-height: 1.7; max-width: 320px;">
+            النادي الرياضي الأكثر فخامة وتطوراً في مصر لعام 2026، نوفر أحدث تكنولوجيا التدريب، المسبح، والسبا لأسلوب حياة صحي واستثنائي.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#plans">باقات الاشتراكات</a></li>
+            <li><a href="#facilities">المرافق والمسبح</a></li>
+            <li><a href="#classes">جدول الكلاسات</a></li>
+            <li><a href="#ladies">القسم النسائي</a></li>
+            <li><a href="#coaches">كباتن التدريب الخاص</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>خدمة الأعضاء</h4>
+          <ul>
+            <li><a href="#calculator">حاسبة الـ BMI والكتلة</a></li>
+            <li><a href="javascript:void(0)" onclick="openTrialModal()">حجز يوم تجريبي مجاني</a></li>
+            <li><a href="#branches">عناوين الفروع ومواعيدها</a></li>
+            <li><a href="#">سياسة تجميد الاشتراك</a></li>
+            <li><a href="#">الشروط واللوائح الداخلية</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>طرق دفع وتقسيط الاشتراكات</h4>
+          <p style="font-size: 0.82rem; color: var(--slate-500); margin-bottom: 12px;">
+            سدد اشتراكك بسهولة نقداً أو بالتقسيط المريح:
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;">
+            <span style="background:var(--slate-100); padding:4px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">إنستاباي InstaPay</span>
+            <span style="background:var(--slate-100); padding:4px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">فودافون كاش</span>
+            <span style="background:var(--slate-100); padding:4px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">تقسيط فاليو valU</span>
+            <span style="background:var(--slate-100); padding:4px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">فيزا / ماستركارد</span>
+            <span style="background:var(--slate-100); padding:4px 8px; border-radius:6px; font-size:0.75rem; font-weight:700;">الدفع بالفرع Cash</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--slate-100); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; font-size:0.82rem; color:var(--slate-500);">
+        <div>جميع الحقوق محفوظة © 2026 نادي أورا فيت جيم مصر | ترخيص وزارة الشباب والرياضة</div>
+        <div style="display:flex; gap:14px;">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">شروط العضوية</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Free Trial Day Pass Modal -->
+  <div class="modal-overlay" id="trialModal" onclick="if(event.target===this) closeTrialModal()">
+    <div class="modal-window">
+      <button class="close-modal" onclick="closeTrialModal()">✕</button>
+      <div style="text-align:center; margin-bottom:16px;">
+        <span style="font-size:2.5rem;">🎟️</span>
+        <h3 style="font-size:1.4rem; font-weight:900; margin-top:6px;">احجز تمرينتك التجريبية مجاناً</h3>
+        <p style="font-size:0.84rem; color:var(--slate-500);">جرب صالة الأوزان، الكارديو، والسبا ليوم كامل بدون أي رسوم!</p>
+      </div>
+
+      <form onsubmit="handleTrialSubmit(event)" style="display:flex; flex-direction:column; gap:14px;">
+        <div class="input-group">
+          <label>الاسم بالكامل</label>
+          <input type="text" required placeholder="مثال: أحمد محمود">
+        </div>
+        <div class="input-group">
+          <label>رقم الموبايل (واتساب لإرسال الدعوة)</label>
+          <input type="tel" required placeholder="01XXXXXXXXX">
+        </div>
+        <div class="input-group">
+          <label>اختر أقرب فرع إليك</label>
+          <select id="trialBranch">
+            <option>فرع التجمع الخامس (شارع التسعين)</option>
+            <option>فرع الشيخ زايد (وصلة دهشور)</option>
+            <option>فرع المعادي (دجلة)</option>
+            <option>فرع الإسكندرية (سموحة)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>القسم المفضل</label>
+          <select id="trialSection">
+            <option value="mixed">القسم العام المشترك</option>
+            <option value="ladies">قسم السيدات المنفصل 100%</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary" style="justify-content:center; padding:12px; margin-top:6px;">
+          تأكيد حجز اليوم المجاني 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Subscription Modal -->
+  <div class="modal-overlay" id="subModal" onclick="if(event.target===this) closeSubscribeModal()">
+    <div class="modal-window">
+      <button class="close-modal" onclick="closeSubscribeModal()">✕</button>
+      <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:4px;">تأكيد الاشتراك في الجيم ⚡</h3>
+      <p style="font-size:0.84rem; color:var(--slate-500); margin-bottom:18px;">املأ بياناتك لتفعيل عضويتك واستلام باركود الدخول</p>
+
+      <div style="background:var(--slate-50); border:1px solid var(--slate-200); border-radius:12px; padding:12px; margin-bottom:16px;">
+        <div style="font-size:0.85rem; color:var(--slate-500);">الباقة المختارة:</div>
+        <div style="font-size:1.05rem; font-weight:900; color:var(--dark);" id="modalPlanName">باقة اللياقة الشاملة Gold Pro</div>
+        <div style="font-size:1.25rem; font-weight:900; color:var(--primary); margin-top:4px;" id="modalPlanPrice">1,350 ج.م</div>
+      </div>
+
+      <form onsubmit="handleSubSubmit(event)" style="display:flex; flex-direction:column; gap:14px;">
+        <div class="input-group">
+          <label>الاسم الثلاثي (كما بالبطاقة الشخصية)</label>
+          <input type="text" required placeholder="محمد أحمد الشريف">
+        </div>
+        <div class="input-group">
+          <label>رقم الموبايل</label>
+          <input type="tel" required placeholder="01XXXXXXXXX">
+        </div>
+        <div class="input-group">
+          <label>فرع الاشتراك الرئيسي</label>
+          <select>
+            <option>فرع التجمع الخامس</option>
+            <option>فرع الشيخ زايد</option>
+            <option>فرع المعادي</option>
+            <option>فرع الإسكندرية</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>طريقة الدفع</label>
+          <select>
+            <option>تحويل إنستاباي InstaPay فوري</option>
+            <option>فودافون كاش / المحافظ الإلكترونية</option>
+            <option>تقسيط على 6 أو 12 شهر مع فاليو valU</option>
+            <option>بطاقة بنكية (فيزا / ماستركارد)</option>
+            <option>الدفع نقداً في مكتب استقبال الجيم</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary" style="justify-content:center; padding:12px; margin-top:6px;">
+          تأكيد الاشتراك وتفعيل الكارنيه 🎉
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-tray" id="toastTray"></div>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bar">
+    <a href="#" class="mobile-tab active">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#plans" class="mobile-tab">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+      <span>الاشتراكات</span>
+    </a>
+    <a href="#classes" class="mobile-tab">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+      <span>الكلاسات</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-tab" onclick="openTrialModal()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      <span>يوم مجاني</span>
+    </a>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    let billingCycle = 'monthly'; // 'monthly' or 'annual'
+
+    const PRICES = {
+      basic: { monthly: 850, annual: 7650 },
+      pro: { monthly: 1350, annual: 12150 },
+      vip: { monthly: 2100, annual: 18900 },
+      pt: { monthly: 3400, annual: 32000 }
+    };
+
+    const SCHEDULE_DATA = {
+      sat: [
+        { time: "09:00 ص - 10:00 ص", name: "CrossFit WOD & Power", coach: "كابتن مصطفى بدر", tag: "طاقة قصوى" },
+        { time: "11:00 ص - 12:00 م", name: "Spinning Cardio Burn", coach: "كابتن أحمد الشناوي", tag: "حرق دهون" },
+        { time: "05:00 م - 06:00 م", name: "Boxing & Kickboxing", coach: "كابتن مصطفى بدر", tag: "فنون قتالية" },
+        { time: "07:00 م - 08:00 م", name: "Yoga & Flexibility", coach: "كابتن نوران حسام", tag: "مرونة واستشفاء" }
+      ],
+      sun: [
+        { time: "10:00 ص - 11:00 ص", name: "HIIT Tabata Cardio", coach: "كابتن أحمد الشناوي", tag: "لياقة عالية" },
+        { time: "04:00 م - 05:00 م", name: "Aqua Aerobics (المسبح)", coach: "كابتن نوران حسام", tag: "مائي منعش" },
+        { time: "06:30 م - 07:30 م", name: "Body Pump & Weights", coach: "كابتن مصطفى بدر", tag: "نحت وتقوية" }
+      ],
+      mon: [
+        { time: "09:00 ص - 10:00 ص", name: "Morning Pilates Core", coach: "كابتن نوران حسام", tag: "شد البطن" },
+        { time: "05:30 م - 06:30 م", name: "Spinning Endurance", coach: "كابتن أحمد الشناوي", tag: "حرق سعرات" },
+        { time: "07:30 م - 08:30 م", name: "Boxing Sparring Class", coach: "كابتن مصطفى بدر", tag: "قتال ودفاع" }
+      ],
+      tue: [
+        { time: "10:30 ص - 11:30 ص", name: "Zumba Dance Fitness", coach: "كابتن نوران حسام", tag: "حريمي مرح" },
+        { time: "06:00 م - 07:00 م", name: "CrossFit Strength Barbell", coach: "كابتن أحمد الشناوي", tag: "قوة بدنية" }
+      ],
+      wed: [
+        { time: "09:00 ص - 10:00 ص", name: "Circuit Training", coach: "كابتن مصطفى بدر", tag: "محطات سريعة" },
+        { time: "06:30 م - 07:30 م", name: "Spinning & Core", coach: "كابتن أحمد الشناوي", tag: "كارديو وبطن" }
+      ],
+      thu: [
+        { time: "10:00 ص - 11:00 ص", name: "Vinyasa Yoga Flow", coach: "كابتن نوران حسام", tag: "راحة واسترخاء" },
+        { time: "05:00 م - 06:00 م", name: "Kickboxing Knockout", coach: "كابتن مصطفى بدر", tag: "قتالي حماسي" }
+      ],
+      fri: [
+        { time: "02:00 م - 03:00 م", name: "Friday Power Run & Cardio", coach: "كابتن أحمد الشناوي", tag: "نشاط الجمعة" },
+        { time: "04:30 م - 05:30 م", name: "Open Gym & Sauna Recovery", coach: "فريق الإشراف الرياضي", tag: "استشفاء وسبا" }
+      ]
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      switchDay('sat');
+      runBmiCalc();
+    });
+
+    // Toggle Monthly vs Annual
+    function toggleBilling(cycle) {
+      billingCycle = cycle;
+      document.getElementById('optMonthly').classList.toggle('active', cycle === 'monthly');
+      document.getElementById('optAnnual').classList.toggle('active', cycle === 'annual');
+
+      const isAnn = cycle === 'annual';
+      document.getElementById('priceBasic').innerText = isAnn ? PRICES.basic.annual.toLocaleString() : PRICES.basic.monthly.toLocaleString();
+      document.getElementById('periodBasic').innerText = isAnn ? "ج.م / سنوياً" : "ج.م / شهرياً";
+
+      document.getElementById('pricePro').innerText = isAnn ? PRICES.pro.annual.toLocaleString() : PRICES.pro.monthly.toLocaleString();
+      document.getElementById('periodPro').innerText = isAnn ? "ج.م / سنوياً" : "ج.م / شهرياً";
+
+      document.getElementById('priceVip').innerText = isAnn ? PRICES.vip.annual.toLocaleString() : PRICES.vip.monthly.toLocaleString();
+      document.getElementById('periodVip').innerText = isAnn ? "ج.م / سنوياً" : "ج.م / شهرياً";
+
+      document.getElementById('pricePt').innerText = isAnn ? PRICES.pt.annual.toLocaleString() : PRICES.pt.monthly.toLocaleString();
+      document.getElementById('periodPt').innerText = isAnn ? "ج.م / باقة سنوية مكثفة" : "ج.م / شهرياً (12 حصة)";
+
+      toast(isAnn ? "تم تفعيل خصم 25% على الباقات السنوية 🎉" : "تم العودة لنظام الاشتراك الشهري");
+    }
+
+    // Switch Schedule Days
+    function switchDay(day, tabEl = null) {
+      if (tabEl) {
+        document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+        tabEl.classList.add('active');
+      }
+      const container = document.getElementById('classesGrid');
+      const list = SCHEDULE_DATA[day] || SCHEDULE_DATA.sat;
+
+      container.innerHTML = list.map(c => `
+        <div class="class-card">
+          <div class="class-time">⏰ ${c.time}</div>
+          <h4 class="class-name">${c.name}</h4>
+          <div class="class-coach">المدرب: ${c.coach}</div>
+          <div style="margin-top:10px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="background:var(--primary-bg); color:var(--primary); font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:99px;">${c.tag}</span>
+            <button onclick="openTrialModal()" style="font-size:0.8rem; font-weight:800; color:var(--dark); text-decoration:underline;">حجز مقعد</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // BMI & Target Calculator
+    function runBmiCalc() {
+      const h = parseFloat(document.getElementById('userHeight').value) / 100 || 1.75;
+      const w = parseFloat(document.getElementById('userWeight').value) || 80;
+      const goal = document.getElementById('userGoal').value;
+
+      const bmi = (w / (h * h)).toFixed(1);
+      document.getElementById('bmiNum').innerText = bmi;
+
+      let status = "";
+      let advice = "";
+
+      if (bmi < 18.5) {
+        status = "نحافة ونقص في الكتلة";
+        advice = "نوصي بالانضمام لباقة التدريب الخاص PT مع جدول ضخامة وزيادة السعرات الصحية لبناء 5-8 كجم عضل صافي.";
+      } else if (bmi <= 24.9) {
+        status = "وزن مثالي ورشيق 👏";
+        advice = "حافظ على لياقتك عبر باقة Gold Pro وحضور كلاسات القوة والكروسفت مع السباحة الأسبوعية.";
+      } else if (bmi <= 29.9) {
+        status = "وزن زائد خفيف";
+        advice = "نوصي بباقة Gold Pro للتركيز على كلاسات الكارديو والسبينينج مع دايت عجز السعرات لخسارة 4-6 كجم شهرياً.";
+      } else {
+        status = "سمنة - بحاجة لبرنامج مكثف";
+        advice = "ابدأ فوراً بباقة التدريب الشخصي 1-on-1 لتغيير عاداتك الصحية بإشراف دقيق وحماية الركب والمفاصل.";
+      }
+
+      document.getElementById('bmiStatus').innerText = status;
+      document.getElementById('bmiAdvice').innerText = advice;
+    }
+
+    // Modals
+    function openTrialModal(preferred = '') {
+      if (preferred === 'ladies') {
+        document.getElementById('trialSection').value = 'ladies';
+      }
+      document.getElementById('trialModal').classList.add('active');
+    }
+    function closeTrialModal() {
+      document.getElementById('trialModal').classList.remove('active');
+    }
+
+    function openSubscribeModal(planName, price) {
+      document.getElementById('modalPlanName').innerText = planName;
+      const finalPrice = billingCycle === 'annual' ? (price * 9) : price;
+      document.getElementById('modalPlanPrice').innerText = `${finalPrice.toLocaleString()} ج.م (${billingCycle === 'annual' ? 'سنوياً بعد الخصم' : 'شهرياً'})`;
+      document.getElementById('subModal').classList.add('active');
+    }
+    function closeSubscribeModal() {
+      document.getElementById('subModal').classList.remove('active');
+    }
+
+    function handleTrialSubmit(e) {
+      e.preventDefault();
+      closeTrialModal();
+      alert("🎉 مبروك! تم حجز تذكرتك التجريبية المجانية بنجاح.\nسيتم إرسال باركود الدخول وتفاصيل الفرع عبر الواتساب فوراً. ننتظر زيارتك!");
+      toast("تم تأكيد حجز اليوم المجاني 🎟️");
+    }
+
+    function handleSubSubmit(e) {
+      e.preventDefault();
+      closeSubscribeModal();
+      alert("🎉 تم تسجيل اشتراكك بنجاح في AURA CLUB!\nرقم العضوية: #AC-2026-" + Math.floor(1000 + Math.random()*9000) + "\nسيتواصل معك مدير الفرع عبر الواتساب لتأكيد موعد استلام الكارنيه وجلسة الـ InBody المجانية.");
+      toast("تم تفعيل اشتراكك بنجاح! مرحباً بك في النادي 🚀");
+    }
+
+    // Toast
+    function toast(msg) {
+      const tray = document.getElementById('toastTray');
+      const pill = document.createElement('div');
+      pill.className = 'toast-pill';
+      pill.innerText = msg;
+      tray.appendChild(pill);
+      setTimeout(() => {
+        pill.style.opacity = '0';
+        pill.style.transition = '0.3s';
+        setTimeout(() => pill.remove(), 300);
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
